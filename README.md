@@ -1,6 +1,6 @@
 ## Overview
 
-
+Backend for your laboratory operations is specifically referring to the integrated system that includes the automation of your analyzers and graphical analysis of quality controls, as well as the billing and result visualization processes. Although the system does not encompass the entirety of your laboratory operations, it will significantly enhance the efficiency and accuracy of these processes.
 
 ## Technologies
 
