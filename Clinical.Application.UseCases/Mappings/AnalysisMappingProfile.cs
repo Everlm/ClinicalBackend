@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using Clinical.Application.Dtos.Dtos.Analysis;
+using Clinical.Application.Dtos.Dtos.Analysis.Resonse;
+using Clinical.Application.Dtos.Dtos.Analysis.Response;
 using Clinical.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,9 @@ namespace Clinical.Application.UseCases.Mappings
         {
             CreateMap<Analysis, GetAllAnalysisResponseDto>()
                 .ForMember(x => x.StateAnalysis, x => x.MapFrom(y => y.State == 1 ? "Active" : "Inactive"))
+                .ReverseMap();
+
+            CreateMap<Analysis, GetAnalysisByIdResponseDto>()
                 .ReverseMap();
         }
     }

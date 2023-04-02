@@ -1,4 +1,4 @@
-﻿namespace Clinical.Application.Dtos.Dtos.Analysis
+﻿namespace Clinical.Application.Dtos.Dtos.Analysis.Resonse
 {
     public class GetAllAnalysisResponseDto
     {

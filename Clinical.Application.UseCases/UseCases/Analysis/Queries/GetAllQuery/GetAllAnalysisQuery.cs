@@ -1,4 +1,4 @@
-﻿using Clinical.Application.Dtos.Dtos.Analysis;
+﻿using Clinical.Application.Dtos.Dtos.Analysis.Resonse;
 using Clinical.Application.UseCases.Commons.Bases;
 using MediatR;
 

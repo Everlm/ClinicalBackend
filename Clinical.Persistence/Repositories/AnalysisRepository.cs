@@ -19,9 +19,26 @@ namespace Clinical.Persistence.Repositories
         {
             using var connection = _context.CreateConnection;
             var query = "uspAnalysisList";
+
             var analysis = await connection.QueryAsync<Analysis>(query, commandType: CommandType.StoredProcedure);
 
             return analysis;
         }
+
+        public async Task<Analysis> GetAnalysisById(int Analysisid)
+        {
+            using var connection = _context.CreateConnection;
+            var query = "uspAnalysisById";
+
+            var parameters = new DynamicParameters();
+            parameters.Add("AnalysisId", Analysisid);
+
+            var analysis = await connection
+                .QuerySingleOrDefaultAsync<Analysis>(query, param: parameters, commandType: CommandType.StoredProcedure);
+
+            return analysis;
+        }
+
+
     }
 }
