@@ -39,6 +39,20 @@ namespace Clinical.Persistence.Repositories
             return analysis;
         }
 
+        public async Task<bool> RegisterAnalysis(Analysis analysis)
+        {
+            using var connection = _context.CreateConnection;
+            var query = "uspRegisterAnalysis";
 
+
+            var parameters = new DynamicParameters();
+            parameters.Add("Name", analysis.Name);
+            parameters.Add("State", 1);
+            parameters.Add("AuditCreateDate", DateTime.Now);
+
+            var recordsAffected = await connection.ExecuteAsync(query, param: parameters, commandType: CommandType.StoredProcedure);
+
+            return recordsAffected > 0;
+        }
     }
 }
